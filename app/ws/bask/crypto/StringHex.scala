@@ -19,5 +19,8 @@ object StringHex {
 
   def hexToAscii: String => List[Int] = _.grouped(2).map(twoBytes => Integer.parseInt(twoBytes, 16)).toList
 
-  def asciiToHex: List[Int] => String = _.map(n => Integer.toHexString(n)).mkString("").toUpperCase
+  def asciiToHex: List[Int] => String = _.map(n => {
+    val i = Integer.toHexString(n)
+    if(i.size == 1) "0" + i else i
+  }).mkString("").toUpperCase
 }

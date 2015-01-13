@@ -42,7 +42,7 @@ public class Oracle {
     }
 
     // Packet Structure: < num_blocks(1) || ciphertext(16*num_blocks) || null-terminator(1) >
-    public int send(int ctext[], int num_blocks) {
+    public int send(byte ctext[], int num_blocks) {
         byte message[] = new byte[(num_blocks*block_length)+2];
         char recvbit[] = new char[2];
         int i;

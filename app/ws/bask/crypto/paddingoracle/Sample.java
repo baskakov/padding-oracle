@@ -29,7 +29,7 @@ public class Sample {
 
         oracle.connect();
 
-        rc = oracle.send(ctext,3);
+        rc = 1;//oracle.send(ctext,2);
         System.out.printf("Oracle returned: %d\n", rc);
 
         oracle.disconnect();
